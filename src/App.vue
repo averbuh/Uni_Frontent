@@ -1,13 +1,39 @@
-<script setup>
+<script>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import ServiceSelector from './components/ServiceSelector.vue'
+import Recipes from './components/Recipes.vue'
+import Restaurant from './components/Restaurant.vue'
+import Suppliers from './components/Suppliers.vue'
+
+export default {
+  data() {
+    return {
+      currentComponent: 'Recipes',
+    };
+  },
+  methods: {
+    switchComponent() {
+      this.currentComponent = this.currentComponent === 'ComponentA' ? 'ComponentB' : 'ComponentA';
+    },
+  },
+};
+//default component
 </script>
 
 <template>
+
+  <div class="service-selector">
+    <ServiceSelector :activeComp="activeComp" />
+    <button @click="activeComp = 'recipes'">Welcome</button>
+  </div>
+  <div>
+    <component :is="activeComp"></component>
+  </div>
   <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
+    
       <HelloWorld msg="You did it!" />
     </div>
   </header>
@@ -25,6 +51,11 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+}
+
+.service-selector {
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 1024px) {

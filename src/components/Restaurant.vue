@@ -3,14 +3,14 @@ import { ref } from 'vue'
 </script>
 
 <template>
-  <div class="suppliers">
-    <h1>Suppliers</h1>
-    <p>Info about suppliers</p>
+  <div class="restaurant">
+    <h1>Restaurant</h1>
+    <p>Info about restaurant</p>
   </div>
 </template>
 
 <style scoped>
-.suppliers{
+.restaurant {
   font-size: 10px;
 }
 </style>
