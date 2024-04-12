@@ -2,36 +2,46 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import ServiceSelector from './components/ServiceSelector.vue'
+import { ref, onMounted } from 'vue';
 
 
 //default component
-let activeComp = 'restaurant'
+let activeComp = ref('restaurant');
 
-function changeComp(value){
-  activeComp = value
+function changeComp(value) {
+  console.log(value);
+  activeComp.value = value
 }
+
+// lifecycle hooks
+onMounted(() => {
+  console.log(activeComp.value)
+})
 </script>
 
 <template>
-
+  <div>
+    <!-- <div>hello w</div> -->
+    <h1>{{ activeComp }}</h1>
+  </div>
   <div class="service-selector">
-    <ServiceSelector :activeComp="activeComp" />
-    <button @click="changeCop('recipes')">Welcome</button>
+    <!-- <ServiceSelector :activeComp="activeComp" /> -->
+    <button @click="changeComp('recipes')">Change</button>
   </div>
   <div>
     <component :is="activeComp"></component>
   </div>
-  <header>
+  <!-- <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
     <div class="wrapper">
-    
+
       <HelloWorld msg="You did it!" />
     </div>
-  </header>
+  </header> -->
 
-  <main>
+  <!-- <main>
     <TheWelcome />
-  </main>
+  </main> -->
 </template>
 
 <style scoped>
