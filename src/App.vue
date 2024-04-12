@@ -1,31 +1,22 @@
-<script>
+<script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import ServiceSelector from './components/ServiceSelector.vue'
-import Recipes from './components/Recipes.vue'
-import Restaurant from './components/Restaurant.vue'
-import Suppliers from './components/Suppliers.vue'
 
-export default {
-  data() {
-    return {
-      currentComponent: 'Recipes',
-    };
-  },
-  methods: {
-    switchComponent() {
-      this.currentComponent = this.currentComponent === 'ComponentA' ? 'ComponentB' : 'ComponentA';
-    },
-  },
-};
+
 //default component
+let activeComp = 'restaurant'
+
+function changeComp(value){
+  activeComp = value
+}
 </script>
 
 <template>
 
   <div class="service-selector">
     <ServiceSelector :activeComp="activeComp" />
-    <button @click="activeComp = 'recipes'">Welcome</button>
+    <button @click="changeCop('recipes')">Welcome</button>
   </div>
   <div>
     <component :is="activeComp"></component>
