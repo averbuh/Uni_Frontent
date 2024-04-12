@@ -3,6 +3,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import ServiceSelector from './components/ServiceSelector.vue'
 import { ref, onMounted } from 'vue';
+import { onUpdated } from 'vue';
 
 
 //default component
@@ -15,8 +16,15 @@ function changeComp(value) {
 
 // lifecycle hooks
 onMounted(() => {
-  console.log(activeComp.value)
+  console.log(activeComp.value);
 })
+
+
+onUpdated(() => {
+  console.log('button click');
+})
+
+
 </script>
 
 <template>
