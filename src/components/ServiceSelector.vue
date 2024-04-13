@@ -1,17 +1,18 @@
 <script setup>
 defineProps({
-  activeComp: {
-    type: String,
+  ButtonAction: {
+    type: Function,
     required: true
+
   }
 })
 </script>
 
 <template>
   <div class="service-selector">
-    <Button label="Recipes" icon="pi pi-apple" @click="activeComp = 'recipes'"/>
-    <Button @click="activeComp = 'restaurant'" label="Restourant" icon="pi pi-briefcase" aria-label="Restourant"/>
-    <Button @click="activeComp = 'suppliers'" label="Suppliers" icon="pi pi-truck" aria-label="Suppliers"/>
+    <Button label="Recipes" icon="pi pi-apple" @click="ButtonAction('recipes')"/>
+    <Button @click="ButtonAction('restaurant')" label="Restourant" icon="pi pi-briefcase" aria-label="Restourant"/>
+    <Button @click="ButtonAction('suppliers')" label="Suppliers" icon="pi pi-truck" aria-label="Suppliers"/>
   </div>
 </template>
 
