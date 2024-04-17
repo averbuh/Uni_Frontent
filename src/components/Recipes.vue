@@ -1,25 +1,22 @@
 <script setup>
 import RecipeItem from './RecipeItem.vue'
 import { ref } from 'vue'
+import axios from 'axios'
+import { onMounted } from 'vue';
 
-const recipes = ref([
-  'Meat',
-  'Shit',
-  'Fish',
-])
+const recipes = ref([])
+
+onMounted( async () => {
+  const response = await axios.get('http://localhost:3000/recipes')
+  recipes.value = response.data
+})
+
 </script>
 
 <template>
-  <div class="recipes-top">
-    <h1>Recipes</h1>
-  </div>
   <transition-group name="fade" tag="ul" class="recipes_list">
-      <recipe-item v-for="(recipe, index) in recipes"
-                 @remove="removeTask(index)"
-                 @complete="completeTask(recipe)"
-                 :task="recipe"
-
-                 :key="recipe"
+      <recipe-item v-for="recipe in recipes"
+        :recipe="recipe"
       ></recipe-item>
   </transition-group>
 
@@ -42,6 +39,11 @@ h1 {
   align-items: center;
   display:list-item;
   margin: 10px 10px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: white;
+  margin-top: 30px;
 
 }
 
