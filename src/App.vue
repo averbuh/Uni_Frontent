@@ -1,27 +1,21 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 import ServiceSelector from './components/ServiceSelector.vue'
-import { ref, onMounted } from 'vue';
-import { onUpdated } from 'vue';
+import { ref, onMounted, onUpdated } from 'vue';
 
 
 //default component
-let activeComp = ref('restaurant');
+let activeComp = ref('recipes');
 
 function changeComp(value) {
-  console.log(value);
   activeComp.value = value
 }
 
 // lifecycle hooks
 onMounted(() => {
-  console.log(activeComp.value);
 })
 
 
 onUpdated(() => {
-  console.log('button click');
 
 })
 </script>

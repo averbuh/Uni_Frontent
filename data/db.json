@@ -1,57 +1,20 @@
 {
   "recipes": [
     {
-      "id": 1,
-      "name": "Dish",
-      "istoday": true,
-      "ingredients": [
-        {
-          "name": "bread"
-        },
-        {
-          "name": "ham"
-        },
-        {
-          "name": "cheese"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Ham and cheese toasties",
+      "id": "0299",
+      "name": "Burger",
       "istoday": false,
       "ingredients": [
-        {
-          "name": "bread"
-        },
-        {
-          "name": "ham"
-        },
-        {
-          "name": "cheese"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Pancakes",
-      "istoday": false,
-      "ingredients": [
-        {
-          "name": "eggs"
-        },
-        {
-          "name": "milk"
-        },
-        {
-          "name": "flour"
-        }
+        "Meat",
+        "Tomatos",
+        "Bread",
+        "Peakles"
       ]
     }
   ],
   "suppliers": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Fruit Supplier",
       "description": "Supplier 1 description",
       "image": "vegetables.avif",
@@ -72,7 +35,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Tomato Supplier",
       "description": "Supplier 2 description",
       "image": "meat.jpeg",
@@ -90,7 +53,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Local Farm",
       "description": "Offers fresh seasonal produce",
       "image": "fruits1.jpg",
@@ -114,11 +77,10 @@
       ]
     }
   ],
-  "restourant":
-    {
-      "id": 1,
-      "name": "Restourant 1",
-      "rating": 3.5,
-      "description": "Restourant 1 description"
-    }
+  "restourant": {
+    "id": 1,
+    "name": "Restourant 1",
+    "rating": 3.5,
+    "description": "Restourant 1 description"
+  }
 }
