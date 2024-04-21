@@ -1,15 +1,14 @@
 {
   "recipes": [
     {
-      "id": "0299",
-      "name": "Burger",
+      "id": "3",
+      "name": "gdfgdrtedrt",
       "istoday": false,
       "ingredients": [
-        "Meat",
-        "Tomatos",
-        "Bread",
-        "Peakles"
-      ]
+        "dfgd"
+      ],
+      "description": null,
+      "image": ""
     }
   ],
   "suppliers": [

@@ -1,31 +1,39 @@
 import axios from 'axios'
 
+const url = 'http://localhost:8080'
 export const Recipes = {
   async getRecipesData() {
-    const response = await axios.get('http://localhost:3000/recipes')
+    const response = await axios.get(url + '/recipes')
     return response.data
   },
 
   async addRecipe(recipe) {
-    const response = await axios.post('http://localhost:3000/recipes', recipe)
+    const response = await axios.post(url + '/recipes', recipe)
     return response
   },
 
-  async deleteRecipe(id) {
-    const response = await axios.delete(`http://localhost:3000/recipes/${id}`)
+  async deleteRecipe(name) {
+    const response = await axios.delete(url + `/recipes/${name}`)
     return response
   },
 
-  async updateRecipe(id, recipe) {
-    const response = await axios.put(`http://localhost:3000/recipes/${id}`, recipe)
+  async updateRecipe(name, recipe) {
+    const response = await axios.put(url + `/recipes/${name}`, recipe)
     return response
   },
 
   getRecipes() {
-    return Promise.resolve(this.getRecipesData());
+    return Promise.resolve(this.getRecipesData())
   },
 
   getTodayRecipes() {
-    return Promise.resolve(this.getRecipesData().then(recipes => recipes.filter(recipe => recipe.istoday === true)));
+    return Promise.resolve(
+      this.getRecipesData().then((recipes) => recipes.filter((recipe) => recipe.istoday === true))
+    )
+  },
+
+  async getImageUrl(image) {
+    const response = await axios.get(url + `/recipes/image/${image}`)
+    return response.data
   }
 }

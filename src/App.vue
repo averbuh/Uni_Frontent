@@ -11,13 +11,13 @@ function changeComp(value) {
 }
 
 // lifecycle hooks
-onMounted(() => {
-})
+// onMounted(() => {
+// })
 
 
-onUpdated(() => {
+// onUpdated(() => {
 
-})
+// })
 </script>
 
 <template>
